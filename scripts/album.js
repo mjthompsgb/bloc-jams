@@ -38,7 +38,7 @@ var albumPrimus = {
         { title: 'Pork Chops little ditty', duration: '0:21' },
         { title: 'My Name Is Mud', duration: '4:46' },
         { title: 'Welcome to This World', duration: '3:40' },
-        { title: 'Bob', duration: '4:40' },
+        { title: 'Bob', duration: '4:40' }
     ]
 };
 
@@ -54,9 +54,9 @@ var createSongRow = function(songNumber, songName, songLength) {
     return template;
 };
 
-    var albumTitle = document.getElementByClassName('album-view-title')[0];
-    var albumArtist = document.getElementByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElemntsByClassName('album-view-release-info')[0];
+    var albumTitle = document.getElementsByClassName('album-view-title')[0];
+    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
     var albumImage = document.getElementsByClassName('album-cover-art')[0];
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
@@ -69,10 +69,10 @@ var setCurrentAlbum = function(album) {
     
     albumSongList.innerHTML = '';
     
-    for (var i = 0; i < album.songs.length; i++) {
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.song[i].duration);
-    }
-};
+     for (var i = 0; i < album.songs.length; i++) {
+         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+     }
+ };
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
